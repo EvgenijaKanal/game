@@ -1,0 +1,36 @@
+{% for divisionID, teams in divisions %}
+<h4>Division {{ divisionID }}</h4>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th style="width: 10%">Teams</th>
+        {% for team in teams %}
+            <th style="width: 10%;text-align: center;font-weight: bold;">{{ team.getName }}</th>
+        {% endfor %}
+        <th style="width: 10%">Total score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% set colCount = teams|length %}
+    {% for row, team in teams   %}
+        <tr>
+            {% for col in range(0, colCount) %}
+
+                {% set index = row * colCount + col %}
+                    {% if col == 0 %}
+                        {% set currentTeam = matches[divisionID][index].opponent %}
+                            <td style="width: 10%; text-align: center;font-weight: bold;">{{ currentTeam.name }}</td>
+                    {% endif %}
+                    {% if col < colCount %}
+                        <td>{{ matches[divisionID][index].getScoreStr(currentTeam) }}</td>
+                    {% else %}
+                        <td> {{ currentTeam.score }} </td>
+                    {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% include "match/playoff.twig" %}

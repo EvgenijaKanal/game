@@ -1,0 +1,24 @@
+{% for round, playOffRound in playoff %}
+    {% set roundName = playOffRound.roundType == 0
+        ? "Round " ~ (round + 1)
+        : playOffRound.roundType == 2 ? "Final Round" : "SemiFinal Winner Round"
+    %}
+    <h3>{{ roundName }}</h3>
+    {% for index, match in playOffRound.matches %}
+        {% set winner = (match.result == 2) ? match.team.name : match.opponent.name %}
+        <pre>
+            <br>
+            {{ "   " ~ match.team.name ~ "   " }}
+            {{ "-------|  " ~ match.teamScore ~ "  " }}
+            {{ "       |------ " ~ winner ~ "" }}
+            {{ "-------|  " ~ match.opponentScore ~ "  " }}
+            {{ "   " ~ match.opponent.name ~ "   \n\n" }}
+        </pre>
+    {% endfor %}
+{% endfor %}
+<h3>Result</h3>
+<ol>
+    {% for team in result %}
+        <li>{{ team }}</li>
+    {% endfor %}
+</ol>

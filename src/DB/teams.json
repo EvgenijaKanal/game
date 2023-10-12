@@ -1,0 +1,33 @@
+{
+  "divisions": ["A", "B"],
+  "teams": [
+    {"name": "A", "division":"A"},
+    {"name": "B", "division":"A"},
+    {"name": "C", "division":"A"},
+    {"name": "D", "division":"A"},
+    {"name": "E", "division":"A"},
+    {"name": "G", "division":"A"},
+    {"name": "F", "division":"A"},
+    {"name": "I", "division":"A"},
+    {"name": "O", "division":"B"},
+    {"name": "P", "division":"B"},
+    {"name": "R", "division":"B"},
+    {"name": "S", "division":"B"},
+    {"name": "T", "division":"B"},
+    {"name": "H", "division":"B"},
+    {"name": "J", "division":"B"},
+    {"name": "K", "division":"B"}
+  ],
+  "score": {
+    "A": {"B": 0, "C": 7, "D": 3, "E": 3, "G": 1, "F": 1, "I": 2},
+    "B": {"A": 8, "C": 6, "D": 5, "E": 2, "G": 1, "F": 6, "I": 7},
+    "C": {"A": 2, "B": 7, "D": 2, "E": 7, "G": 3, "F": 2, "I": 6},
+    "D": {"A": 6, "B": 8, "C": 4, "E": 1, "G": 6, "F": 6, "I": 8},
+    "E": {"A": 5, "B": 6, "C": 5, "D": 6, "G": 7, "F": 6, "I": 0},
+    "G": {"A": 0, "B": 4, "C": 4, "D": 2, "E": 7, "F": 2, "I": 4},
+    "F": {"A": 6, "B": 8, "C": 0, "D": 8, "E": 6, "G": 5, "I": 5},
+    "I": {"A": 4, "B": 5, "C": 2, "D": 1, "E": 6, "G": 4, "F": 1},
+    "O": {"P": 4, "R": 5, "S": 2, "T": 1, "H": 6, "J": 4, "K": 1},
+    "P": {"O": 4, "R": 5, "S": 2, "T": 1, "H": 6, "J": 4, "K": 1}
+  }
+}
